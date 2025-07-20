@@ -1,0 +1,13 @@
+<template>
+    <nav class="navbar slds-p-vertical_x-large">
+        <section class="nav-items--container ">
+            <ul class="nav-items slds-grid slds-align_absolute-center">
+                <template for:each={tabs} for:item="tab">
+                    <li class="nav-item" key={tab}>
+                        <a class="tab">{tab}</a>
+                    </li>
+                </template>
+            </ul>
+        </section>
+    </nav>
+</template>
