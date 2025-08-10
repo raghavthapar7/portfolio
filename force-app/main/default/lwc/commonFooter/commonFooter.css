@@ -2,11 +2,10 @@
     --textWhite: #fff;
     --backgroundColor: #000;
     --hoverColor:#E0E0E0;
-    --footerBorderColor: #333333;
+    --footerBorderColor: rgba(255, 255, 255, 0.1);
     --subHeadingColor: #4c4c4c;
  
     --bodyWidth:75rem;
-    --footerBorder: var(--size2px) solid var(--footerBorderColor);
 
     /* Size Variables */
     --size1px:  0.063rem;  --size2px:  0.125rem;  --size4px:  0.25rem;   
@@ -27,28 +26,37 @@
     background-color: var(--backgroundColor);
 }
 
+.footer-border{
+    height: var(--size4px);
+    background: var(--footerBorderColor);
+    width: 90%;
+    border: none;
+    border-radius: var(--size10px);
+}
+
 .footer-container{
     width: var(--bodyWidth);
     margin: 0 auto;
-    border-top: var(--footerBorder);
 }
 
 .footer-heading{
     text-transform: uppercase;
-    font-size: var(--size28px);
+    font-size: var(--size44px);
 }
 
 .sub-heading{
-    font-size: var(--size20px);
+    font-size: var(--size24px);
+    text-transform: uppercase;
     color: var(--subHeadingColor);
 }
 
 .footer-icons{
-    gap: var(--size24px);
+    gap: var(--size40px);
+    justify-content: start;
 }
 
 .icon{
     border-radius: 50%;
-    width: var(--size32px);
+    width: var(--size40px);
     cursor: pointer;
 }

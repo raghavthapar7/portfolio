@@ -18,27 +18,7 @@
                     <button class="btn-primary">Say Hello 👋</button>
                 </div>
             </section>
-
-            <!-- <section class="experience">
-                <p class="section-header">My Experience</p>
-
-                <template lwc:if={experiences}>
-                    <ul class="experiences-container slds-grid slds-grid_align-spread">
-                        <template for:each={experiences} for:item="experience">
-                            <li 
-                                class="logo" 
-                                key={experience.experienceId} 
-                                title={experience.experienceName}
-                                data-experience={experience.experienceId} 
-                                onclick={changeSelectedExperience}
-                            >
-                                <img src={experience.logo} alt="Company Logo" >
-                            </li>
-                        </template>
-                        <div class="bar"></div>
-                    </ul>
-                </template>
-            </section> -->
+            
             <c-experience experiences={experiences}></c-experience>
             
         </div>

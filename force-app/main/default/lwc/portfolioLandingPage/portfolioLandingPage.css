@@ -146,3 +146,7 @@ main{
     transform: scale(1.5);
     transition: 100ms all ease-out ;
 }
+
+main{
+    padding-bottom: 120px;
+}

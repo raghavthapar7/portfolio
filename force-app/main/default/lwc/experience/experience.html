@@ -1,0 +1,49 @@
+<template>
+    <section class="experience">
+        <h2 class="section-header slds-m-bottom_xx-large">My Experience</h2>
+
+        <template lwc:if={experiences}>
+            <ul class="experiences-container slds-grid slds-grid_align-spread">
+                <template for:each={experiences} for:item="experience">
+                    <li 
+                        class="logo slds-grid" 
+                        key={experience.experienceId} 
+                        title={experience.experienceName}
+                        data-id={experience.experienceId} 
+                        onclick={changeSelectedExperience}
+                    >
+                        <img class="slds-align_absolute-center" src={experience.logo} alt="Company Logo" >
+                    </li>
+                </template>
+                <div class="bar"></div>
+            </ul>
+        </template>
+
+        <template lwc:if={selectedExperience}>
+            <div class="experience-card">
+                <h3 class="experience-name">{selectedExperience.experienceName}</h3>
+                <h4 class="experience-location">{selectedExperience.companyName}, {selectedExperience.location}</h4>
+                <p class="slds-m-top_large experience-description">
+                    <lightning-formatted-rich-text value={selectedExperience.description}></lightning-formatted-rich-text>
+                </p>
+
+
+                <template lwc:if={selectedExperience.skills}>
+                    <h4 class="slds-m-top_large slds-m-bottom_small skill-heading">Skills Learnt</h4>
+                    <div class="skills slds-grid slds-wrap slds-grid_vertical-align-center">
+                        <template for:each={selectedExperience.skills} for:item="skill">
+                            <span class="skill slds-grid slds-grid_vertical-align-center" key={skill.skillName}>
+                                <img class="skill-image" src={skill.skillImage} alt="Skill Icon" title={skill.skillName} />
+                                <p class="skill-name">{skill.skillName}</p>
+                            </span>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <!-- <div class="slds-m-top_large experience-count">
+            <h3>Hello</h3>
+        </div> -->
+    </section>
+</template>
