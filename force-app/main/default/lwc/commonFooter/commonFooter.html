@@ -1,18 +1,46 @@
 <template>
-    <footer class="footer">
-        <hr class="footer-border slds-align_absolute-center">
-        <section class="footer-container slds-p-vertical_x-large">
-            <div>
-                <p class="footer-heading">Raghav Thapar</p>
-                <p class="sub-heading">Salesforce Developer</p>
+    <footer class="footer slds-size_1-of-1">
+        <section class="footer-container slds-grid slds-align_absolute-center slds-m-bottom_large slds-p-around_x-large">
+            <div class="footer-header slds-large-size_1-of-2 slds-grid slds-grid_vertical">
+                <div>
+                    <h2 class="footer-heading"><strong>Let’s Talk Projects, Ideas, & Visions</strong></h2>
+                    <h3 class="footer-sub--heading slds-m-top_medium">
+                        I enjoy meeting new people and hearing their stories. I’m always up for a good conversation, whether it’s chatting about your latest project, tossing around ideas, or figuring out how I can contribute to your vision 😉 <br> So… A coffee chat?
+                    </h3>
+                </div>
+
+                <div class="social-grid slds-grid slds-grid_vertical">
+                    <p class="social-heading">Socials: </p>
+                    <ul class="icon-grid slds-grid">
+                        <li onclick={handleRedirection} data-target="LinkedIn"><img class="icon-social" src={LinkedIn} alt="LinkedIn"></li>
+                        <li onclick={handleRedirection} data-target="Trailhead"><img class="icon-social" src={Trailhead} alt="Trailhead"></li>
+                        <li onclick={handleRedirection} data-target="X"><img class="icon-social" src={X} alt="X"></li>
+                        <li onclick={handleRedirection} data-target="GitHub"><img class="icon-social" src={GitHub} alt="GitHub"></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="slds-m-top_xx-large footer-icons slds-grid slds-align_absolute-center slds-">
-                <img class="icon" title="LinkedIn" data-target="LinkedIn" src={LinkedIn} alt="LinkedIn" onclick={handleRedirection}>
-                <img class="icon" title="GitHub" data-target="GitHub" src={GitHub} alt="GitHub" onclick={handleRedirection}>
-                <img class="icon" title="X/Twitter" data-target="X" src={X} alt="X/Twitter" onclick={handleRedirection}>
-                <img class="icon" title="Trailhead" data-target="Trailhead" src={Trailhead} alt="Trailhead" onclick={handleRedirection}>
+            <div class="footer-body slds-container_fluid">
+                <div class="input-container slds-p-left_xx-large slds-grid slds-grid_vertical">
+                    <input placeholder="yourAwesomeEmail@company.com" class="email-input slds-m-bottom_none" oninput={handleEmailChange}></input>
+                    <div class="btn-container slds-grid">
+                        <button class="btn btn-call slds-grid" disabled={areButtonsDisabled} onclick={redirectToCal}>
+                            <span>Let's Talk</span>
+                            <lightning-icon icon-name='utility:date_time' alternative-text='date_time' size='small' class="icon-btn" title='date_time'></lightning-icon>
+                        </button>
+                        <button class="btn btn-email slds-grid slds-grid_vertical-align-center" disabled={areButtonsDisabled} onclick={redirectToMail}>
+                            <span>Email Me</span>
+                            <lightning-icon icon-name='utility:email' alternative-text='email' size='small' class="icon-btn" title='email'></lightning-icon>
+                        </button>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <hr class="separator slds-m-bottom_none">
+
+        <section class="footer-bottom slds-align_absolute-center slds-p-top_x-small">
+            Made with grit and a lot of coffee ❤️
         </section>
     </footer>
 </template>

@@ -1,11 +1,26 @@
 :host{
     --textWhite: #fff;
+    --textBlack: #000;
     --backgroundColor: #000;
     --hoverColor:#E0E0E0;
     --footerBorderColor: rgba(255, 255, 255, 0.1);
     --subHeadingColor: #4c4c4c;
+    --buttonBorderColor: #939393;
+    --buttonDisabledColor: #4c4c4c;
+    --iconDisabledColor: #fff;
+    --secondaryCTA: #1F7AD9;
+    --primaryCTA: #d9291f;
+    --iconTalkColor: #f7d4d2;
+    --iconEmailColor: #d2e4f7;
+    --placeholderColor: #666;
+
+    --btnDisabledBorder: var(--size1px) solid var(--buttonBorderColor);
+    --btnCallBorder: var(--size1px) solid var(--primaryCTA);
+    --btnEmailBorder: var(--size1px) solid var(--secondaryCTA);
+    --btnTransition: all 200ms ease-in-out;
+    --inputEmailBorder: var(--size2px) solid #000;
  
-    --bodyWidth:75rem;
+    --bodyWidth:87.5rem;
 
     /* Size Variables */
     --size1px:  0.063rem;  --size2px:  0.125rem;  --size4px:  0.25rem;   
@@ -14,7 +29,7 @@
     --size24px: 1.50rem;   --size28px: 1.75rem;   --size32px: 2.00rem;  
     --size36px: 2.25rem;   --size40px: 2.50rem;   --size44px: 2.75rem;   
     --size48px: 3.00rem;   --size52px: 3.25rem;   --size56px: 3.50rem;   
-    --size60px: 3.75rem;   --size64px: 4.00rem;   
+    --size60px: 3.75rem;   --size64px: 4.00rem;   --size18px: 1.125rem
 }
 
 *{
@@ -22,41 +37,127 @@
 }
 
 .footer{
-    color: #fff;
     background-color: var(--backgroundColor);
 }
 
-.footer-border{
-    height: var(--size4px);
-    background: var(--footerBorderColor);
-    width: 90%;
-    border: none;
-    border-radius: var(--size10px);
+.footer-bottom, .footer-container{
+    max-width: var(--bodyWidth);
+    margin: 0 auto;
+    color: var(--textWhite);
 }
 
 .footer-container{
-    width: var(--bodyWidth);
-    margin: 0 auto;
+    color: var(--textBlack);
+    background-color: #fff;
+    border-radius: var(--size8px);
+    gap: var(--size16px);
+    height: 45vh;
+}
+
+.footer-header{
+    gap: var(--size28px);
+}
+
+
+.social-grid{
+    gap: var(--size8px);
+}
+
+.social-heading{
+    font-size: var(--size16px);
+}
+
+.icon-grid{
+    gap: var(--size24px);
+}
+
+.icon-social{
+    width: var(--size24px);
+    cursor: pointer;
 }
 
 .footer-heading{
-    text-transform: uppercase;
-    font-size: var(--size44px);
+    font-size: var(--size32px);
+    text-transform: capitalize;
 }
 
-.sub-heading{
-    font-size: var(--size24px);
-    text-transform: uppercase;
+.footer-sub--heading{
+    font-size: var(--size18px);
     color: var(--subHeadingColor);
+    line-height: 1.7;
 }
 
-.footer-icons{
-    gap: var(--size40px);
-    justify-content: start;
+.input-container{
+    gap: var(--size8px);
 }
 
-.icon{
-    border-radius: 50%;
-    width: var(--size40px);
+.email-input, .btn{
+    font-size: var(--size16px);
+}
+
+.email-input{
+    padding: var(--size20px) var(--size40px);
+    border-radius: var(--size40px);
+    border: var(--inputEmailBorder);
+}
+
+.email-input:focus{
+    outline: none;
+}
+
+.email-input::placeholder{
+    color: var(--placeholderColor);
+}
+
+.btn-container{
+    gap: var(--size8px);
+}
+
+.btn{
+    gap: var(--size8px);
+    border-radius: var(--size40px);
+    background: none;
+    padding: var(--size10px) var(--size32px);
     cursor: pointer;
+    border: var(--btnDisabledBorder);
+    color: var(--textWhite);
+}
+
+.btn:disabled{
+    cursor: not-allowed;
+    background: var(--buttonDisabledColor);
+    border: var(--btnDisabledBorder);
+    transition: var(--btnTransition)
+}
+
+.btn-call{
+    background-color: var(--primaryCTA);
+    border: var(--btnCallBorder);
+    transition: var(--btnTransition);
+}
+
+.btn-email{
+    background-color: var(--secondaryCTA);
+    border: var(--btnEmailBorder);
+    transition: var(--btnTransition);
+}
+
+.btn:disabled > .icon-btn{
+    --slds-c-icon-color-foreground-default: var(--iconDisabledColor);
+}
+
+.btn-email > .icon-btn { 
+ --slds-c-icon-color-foreground-default: var(--iconEmailColor);
+}
+
+.btn-call > .icon-btn{
+    --slds-c-icon-color-foreground-default: var(--iconTalkColor);
+}
+
+.separator{
+    margin-top: var(--size56px);
+}
+
+.footer-bottom{
+    font-size: var(--size18px);
 }
