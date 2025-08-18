@@ -3,7 +3,7 @@
         <section class="nav-items--container ">
             <ul class="nav-items slds-grid slds-align_absolute-center">
                 <template for:each={tabs} for:item="tab">
-                    <li class="nav-item" key={tab}>
+                    <li class="nav-item" key={tab} data-target={tab} onclick={handleTabClick}>
                         <a class="tab">{tab}</a>
                     </li>
                 </template>

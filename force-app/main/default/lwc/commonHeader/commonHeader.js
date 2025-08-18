@@ -1,5 +1,16 @@
 import { LightningElement } from 'lwc';
+import resume from '@salesforce/resourceUrl/resume';
 
 export default class CommonHeader extends LightningElement {
-    tabs = ['About Me', 'Experience', 'Blog', 'Resume'];
+    tabs = ['About Me', 'Experience', 'Resume'];
+
+    handleTabClick(event) {
+        const target = event.currentTarget.dataset.target;
+        console.log(target);
+
+        if (target === 'Resume') {
+            let resumeLink = resume;
+            window.open(resumeLink, '_blank');
+        }
+    }
 }
