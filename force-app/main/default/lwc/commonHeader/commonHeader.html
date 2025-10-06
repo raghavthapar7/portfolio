@@ -1,6 +1,6 @@
 <template>
-    <nav class="navbar slds-p-vertical_x-large">
-        <section class="nav-items--container ">
+    <nav class="navbar slds-p-around_x-large">
+        <section class="nav-items--container slds-size_1-of-1">
             <ul class="nav-items slds-grid slds-align_absolute-center">
                 <template for:each={tabs} for:item="tab">
                     <li class="nav-item" key={tab} data-target={tab} onclick={handleTabClick}>
@@ -8,6 +8,24 @@
                     </li>
                 </template>
             </ul>
+        </section>
+
+        <section class="hamburger-nav--container">
+            <button class="hamburger-btn slds-grid slds-grid_vertical slds-grid_align-spread slds-p-around_none" onclick={toggleMenu} aria-label="Menu">
+                <span class="bar slds-size_1-of-1"></span>
+                <span class="bar slds-size_1-of-1"></span>
+                <span class="bar slds-size_1-of-1"></span>
+            </button>
+
+            <template lwc:if={hamburgerActive}>
+                <ul class="nav-items slds-grid slds-grid_vertical slds-align_absolute-center">
+                    <template for:each={tabs} for:item="tab">
+                        <li class="nav-item" key={tab} data-target={tab} onclick={handleTabClick}>
+                            <a class="tab">{tab}</a>
+                        </li>
+                    </template>
+                </ul>
+            </template>
         </section>
     </nav>
 </template>
