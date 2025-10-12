@@ -46,7 +46,7 @@ main{
 }
 
 .body-container{
-    width: var(--bodyWidth);
+    max-width: var(--bodyWidth);
     margin: 0 auto;
 }
 
@@ -149,4 +149,35 @@ main{
 
 main{
     padding-bottom: 120px;
+}
+
+@media((min-width:0rem) and (max-width:47.9375rem)){
+    .body-container{
+        padding: 0 var(--size16px);
+    }
+
+    .hero{
+        height: 80vh;
+    }
+
+    .hero-image{
+        height: 10rem;
+    }
+
+    .intro{
+        font-size: var(--size20px);
+    }
+
+    .tagline{
+        font-size: var(--size32px);
+    }
+
+    .underline{
+        display: none;
+    }
+
+    .btn-primary{
+        font-size: var(--size16px);
+        padding: var(--size8px) var(--size32px);
+    }
 }

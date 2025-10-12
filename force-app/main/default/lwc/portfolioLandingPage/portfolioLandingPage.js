@@ -8,6 +8,7 @@ export default class PortfolioLandingPage extends LightningElement {
     profilePicture;
     underline;
     @track experiences = [];
+    mobileView = false;
 
     @wire(getExperienceData)
     handleData({ data, error }) {
@@ -25,6 +26,16 @@ export default class PortfolioLandingPage extends LightningElement {
     connectedCallback() {
         this.profilePicture = portfolioImages + '/PortfolioImages/heroImage.png';
         this.underline = portfolioImages + '/PortfolioImages/underline.png';
+        window.addEventListener('resize', this.displayWindowSize.bind(this));
+        this.displayWindowSize();
+    }
+
+    displayWindowSize() {
+        let width = window.innerWidth;
+        if (width < 1024)
+            this.mobileView = true;
+        else
+            this.mobileView = false;
     }
 
 

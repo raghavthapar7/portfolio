@@ -7,12 +7,20 @@
                     <p class="intro slds-m-top_medium">Hi, I'm Raghav 🤘</p>
                 </div>
 
-                <div class="tagline slds-m-top_x-large">
-                    <p>Building beautiful experiences </p>
-                    <img src={underline} class="underline">
-                    <p>& scalable solutions with</p>
-                    <p>Salesforce</p>
-                </div>
+                <template lwc:if={mobileView}>
+                    <div class="tagline slds-m-top_x-large">
+                        <p>Building beautiful experiences & scalable solutions with Salesforce</p>
+                    </div>
+                </template>
+
+                <template lwc:else>
+                    <div class="tagline slds-m-top_x-large">
+                        <p>Building beautiful experiences </p>
+                        <img src={underline} class="underline">
+                        <p>& scalable solutions with</p>
+                        <p>Salesforce</p>
+                    </div>
+                </template>
 
                 <div class="cta-container slds-m-top_large">
                     <button class="btn-primary">Say Hello 👋</button>
